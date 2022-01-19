@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Products {% endblock %}
+{% block content%}
+<div class="container card-group">
+    {% for product in products %}
+      <div style="background-color: #f5ebdc; border: none;" class="card">
+        <img style="width:200px; height:auto;" src="{{ product.image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+              <a href="{% url 'detail' product.id %}">{{ product.name }}</a>
+          </h5>
+          <p class="card-text">{{ product.kkal}} kkal</p>
+        </div>
+    </div>
+  {% endfor %}
+{% endblock %}
