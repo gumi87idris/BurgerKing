@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %} Products {% endblock %}
+{% load static %}
 {% block content%}
 <div class="container card-group">
     {% for product in products %}
@@ -9,7 +10,10 @@
           <h5 class="card-title">
               <a href="{% url 'detail' product.id %}">{{ product.name }}</a>
           </h5>
-          <p class="card-text">{{ product.kkal}} kkal</p>
+          <p class="card-text">{{ product.price}}$</p>
+            <a href="{% url 'cart_add' product.id %}">
+            <img style="width: 60px; height: auto;" src="{% static 'shopping-cart.png' %}">
+                </a>
         </div>
     </div>
   {% endfor %}
