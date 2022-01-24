@@ -21,6 +21,13 @@
     <nav class="navbar navbar-light" style="background-color: #f5ebdc;">
   <div class="container-fluid">
     <a href="{% url 'index' %}" class="navbar-brand">Menu</a>
+      {% if not request.user.is_authenticated %}    <!--is_authenticated - авторизован-->
+      <a href="{% url 'register' %}">Sign Up</a>
+            <a href="{% url 'login' %}">Log In</a>
+      {% else %}
+        <span>{{ request.user.username }}</span>
+              <a href="{% url 'logout' %}">Logout</a>
+      {% endif %}
       <a href="{% url 'cart_detail' %}">
       <img style="width: 45px; height: auto;" src="{% static 'carts.png' %}">
       </a>
