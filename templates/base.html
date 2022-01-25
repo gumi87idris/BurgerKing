@@ -31,12 +31,18 @@
       <a href="{% url 'cart_detail' %}">
       <img style="width: 45px; height: auto;" src="{% static 'carts.png' %}">
       </a>
+      {% if request.user.is_superuser %}
       <a href="{% url 'create' %}" class="navbar-brand">&plus;</a>
+      {% endif %}
       <img style="width: 70px; height: auto margin-left: 170px;" src="{% static 'logo.svg' %}">
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+    <form action="{% url 'search' %}" method="get" class="d-flex">
+<!--        action отвечает за переход на burger-->
+      <input name="q" class="form-control me-2" type="search" placeholder="Искать здесь" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
+<!--        submit отправляет данные на back-->
     </form>
+
   </div>
     </nav>
 

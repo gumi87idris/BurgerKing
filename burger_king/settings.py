@@ -151,5 +151,5 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
 LOGIN_REDIRECT_URL = '/homepage/'   # переносит на главную страницу
-LOGIN_URL = 'account/login/'
+LOGIN_URL = '/account/login/'
 LOGOUT_REDIRECT_URL = '/homepage/'
