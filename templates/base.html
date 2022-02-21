@@ -47,7 +47,7 @@
       {% if request.user.is_superuser %}
       <a href="{% url 'create' %}" class="navbar-brand">&plus;</a>
       {% endif %}
-      <img style="width: 70px; height: auto margin-left: 170px;" src="{% static 'logo.svg' %}">
+      <img style="width: 70px; height: auto; margin-left: center;" src="{% static 'logo.svg' %}">
 
     <form action="{% url 'search' %}" method="get" class="d-flex">
 <!--        action отвечает за переход на burger-->
